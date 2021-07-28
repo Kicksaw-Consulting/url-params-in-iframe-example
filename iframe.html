@@ -1,0 +1,15 @@
+<div>
+  <h6>iframe</h6>
+  <ul id="list"></ul>
+</div>
+
+<script>
+  const ul = document.getElementById("list");
+  const data = [1, 2, 3];
+
+  data.forEach((datum) => {
+    const li = document.createElement("li");
+    li.innerHTML = datum;
+    ul.appendChild(li);
+  });
+</script>
