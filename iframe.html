@@ -5,11 +5,14 @@
 
 <script>
   const ul = document.getElementById("list");
-  const data = [1, 2, 3];
 
-  data.forEach((datum) => {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  // this is a dictionary with key value pairs for the GET params
+  const params = Object.fromEntries(urlSearchParams.entries());
+
+  Object.keys(params).forEach((key) => {
     const li = document.createElement("li");
-    li.innerHTML = datum;
+    li.innerHTML = key + ": " + params[key];
     ul.appendChild(li);
   });
 </script>

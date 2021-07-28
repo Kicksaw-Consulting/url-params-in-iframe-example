@@ -1,6 +1,9 @@
 <h1>Example page</h1>
-<iframe src="iframe.html"></iframe>
+<iframe src="iframe.html" id="iframe"></iframe>
 <script>
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const params = Object.fromEntries(urlSearchParams.entries());
+  const iframe = document.getElementById("iframe");
+  if (window.location.search) {
+    // modify the iframe src to contain the same get params as the parent
+    iframe.src = iframe.src + window.location.search;
+  }
 </script>
